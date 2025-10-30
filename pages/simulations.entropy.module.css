@@ -1,0 +1,208 @@
+.pageLayout {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: var(--spacing-8);
+  min-height: calc(100vh - var(--shared-header-height));
+  padding: var(--spacing-8);
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-family-base);
+}
+
+.simulationContainer {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-4) var(--spacing-6);
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--surface-foreground);
+}
+
+.entropyDisplay {
+  display: flex;
+  align-items: baseline;
+  gap: var(--spacing-3);
+  background-color: var(--muted);
+  padding: var(--spacing-2) var(--spacing-4);
+  border-radius: var(--radius);
+}
+
+.entropyLabel {
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+  font-weight: 500;
+}
+
+.entropyValue {
+  font-family: var(--font-family-monospace);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.visualization {
+  flex-grow: 1;
+  position: relative;
+  background: radial-gradient(
+    circle,
+    var(--temp-color-start) 0%,
+    var(--temp-color-end) 100%
+  );
+  transition: background var(--animation-duration-normal) ease;
+}
+
+.visualization svg {
+  width: 100%;
+  height: 100%;
+}
+
+.controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: var(--spacing-6);
+  align-items: center;
+  padding: var(--spacing-4) var(--spacing-6);
+  border-top: 1px solid var(--border);
+  background-color: var(--surface);
+  flex-shrink: 0;
+}
+
+.sliderGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.sliderGroup label {
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+}
+
+.resetButton {
+  align-self: end;
+  margin-bottom: var(--spacing-1);
+}
+
+.navigationFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-4) var(--spacing-6);
+  border-top: 1px solid var(--border);
+  background-color: var(--muted);
+  flex-shrink: 0;
+}
+
+.navigationFooter button {
+  min-width: 200px;
+}
+
+/* Sidebar */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.sidebarTitle {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  font-size: 1.25rem;
+  font-weight: 600;
+  padding: var(--spacing-4) var(--spacing-6);
+  border-bottom: 1px solid var(--border);
+  color: var(--surface-foreground);
+}
+
+.sidebarContent {
+  padding: var(--spacing-6);
+  overflow-y: auto;
+  line-height: 1.7;
+  color: var(--muted-foreground);
+}
+
+.sidebarContent h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--foreground);
+  margin-top: var(--spacing-6);
+  margin-bottom: var(--spacing-3);
+}
+
+.sidebarContent p {
+  margin-bottom: var(--spacing-4);
+}
+
+.sidebarContent ul {
+  padding-left: var(--spacing-6);
+  margin-bottom: var(--spacing-4);
+}
+
+.sidebarContent li {
+  margin-bottom: var(--spacing-2);
+}
+
+.formula {
+  font-family: var(--font-family-monospace);
+  background-color: var(--muted);
+  padding: var(--spacing-3) var(--spacing-4);
+  border-radius: var(--radius);
+  text-align: center;
+  font-size: 1.1rem;
+  margin: var(--spacing-2) 0 var(--spacing-4);
+  color: var(--foreground);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .pageLayout {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+
+  .simulationContainer {
+    min-height: 60vh;
+  }
+}
+
+@media (max-width: 600px) {
+  .pageLayout {
+    padding: var(--spacing-2);
+  }
+
+  .header {
+    flex-direction: column;
+    gap: var(--spacing-3);
+    padding: var(--spacing-3);
+  }
+
+  .controls {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-4);
+  }
+
+  .resetButton {
+    width: 100%;
+  }
+}

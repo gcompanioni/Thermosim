@@ -1,0 +1,182 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-4) var(--spacing-6);
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+  gap: var(--spacing-6);
+  flex-wrap: wrap;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--surface-foreground);
+  margin: 0;
+}
+
+.dataDisplay {
+  display: flex;
+  gap: var(--spacing-4);
+  flex-wrap: wrap;
+}
+
+.dataItem {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+  padding: var(--spacing-2) var(--spacing-3);
+  background-color: var(--muted);
+  border-radius: var(--radius);
+}
+
+.dataLabel {
+  font-size: 0.75rem;
+  color: var(--muted-foreground);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.dataValue {
+  font-family: var(--font-family-monospace);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+.mainContent {
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  gap: var(--spacing-8);
+  padding: var(--spacing-6);
+  min-height: 500px;
+}
+
+.engineContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.engineSvg {
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background-color: var(--background);
+}
+
+.sparkAnimation {
+  animation: sparkFlash 0.2s ease-in-out;
+}
+
+@keyframes sparkFlash {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.strokeIndicator {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-3);
+  padding: var(--spacing-3);
+  background-color: var(--muted);
+  border-radius: var(--radius);
+}
+
+.strokeLabel {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  padding: var(--spacing-2);
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+  border-radius: var(--radius-sm);
+  transition: all var(--animation-duration-fast);
+}
+
+.strokeLabel.active {
+  background-color: var(--surface);
+  color: var(--foreground);
+  font-weight: 600;
+  box-shadow: var(--shadow);
+}
+
+.strokeDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.chartContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+  min-height: 400px;
+}
+
+.chartTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--foreground);
+  text-align: center;
+}
+
+.chartNote {
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+  font-style: italic;
+}
+
+.controls {
+  display: grid;
+  grid-template-columns: auto 1fr 1fr;
+  gap: var(--spacing-6);
+  align-items: end;
+  padding: var(--spacing-4) var(--spacing-6);
+  border-top: 1px solid var(--border);
+  background-color: var(--muted);
+  flex-shrink: 0;
+}
+
+.controlRow {
+  display: flex;
+  gap: var(--spacing-3);
+}
+
+.sliderGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.sliderGroup label {
+  font-size: 0.875rem;
+  color: var(--foreground);
+  font-weight: 500;
+}
+
+@media (max-width: 1400px) {
+  .mainContent {
+    grid-template-columns: 350px 1fr;
+  }
+}
+
+@media (max-width: 1024px) {
+  .mainContent {
+    grid-template-columns: 1fr;
+  }
+  
+  .engineContainer {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .controls {
+    grid-template-columns: 1fr;
+  }
+}

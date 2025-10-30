@@ -1,0 +1,211 @@
+.pageLayout {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: var(--spacing-8);
+  min-height: calc(100vh - var(--shared-header-height));
+  padding: var(--spacing-8);
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-family-base);
+}
+
+.simulationContainer {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.tabsRoot {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-4) var(--spacing-6);
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--surface-foreground);
+}
+
+.tabsList {
+  border-bottom: none;
+}
+
+.tabsContent {
+  flex-grow: 1;
+  padding: var(--spacing-6);
+}
+
+.lawContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: var(--spacing-6);
+}
+
+.visualization {
+  flex-grow: 1;
+  position: relative;
+  background-color: var(--muted);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.visualization canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-4);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background-color: color-mix(in srgb, var(--surface), var(--background) 50%);
+  flex-shrink: 0;
+}
+
+.displayGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.formula {
+  font-family: var(--font-family-monospace);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.valueDisplay {
+  display: flex;
+  gap: var(--spacing-4);
+  font-family: var(--font-family-monospace);
+  color: var(--muted-foreground);
+}
+
+.buttonGroup {
+  display: flex;
+  gap: var(--spacing-3);
+}
+
+.doWorkButton {
+  background-color: hsl(48 96% 53%) !important;
+  color: hsl(222 47% 11%) !important;
+}
+
+.doWorkButton:hover {
+  background-color: hsl(48 96% 45%) !important;
+}
+
+.entropyLabel {
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+  font-weight: 500;
+}
+
+.entropyValue {
+  font-family: var(--font-family-monospace);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.sliderGroup {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.sliderGroup label {
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+}
+
+/* Sidebar */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.sidebarTitle {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  font-size: 1.25rem;
+  font-weight: 600;
+  padding: var(--spacing-4) var(--spacing-6);
+  border-bottom: 1px solid var(--border);
+  color: var(--surface-foreground);
+}
+
+.sidebarContent {
+  padding: var(--spacing-6);
+  overflow-y: auto;
+  line-height: 1.7;
+  color: var(--muted-foreground);
+}
+
+.sidebarContent h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--foreground);
+  margin-top: var(--spacing-4);
+  margin-bottom: var(--spacing-2);
+}
+.sidebarContent h3:first-child {
+  margin-top: 0;
+}
+
+.sidebarContent p {
+  margin-bottom: var(--spacing-2);
+}
+
+.sidebarContent strong {
+  color: var(--foreground);
+  font-weight: 500;
+}
+
+.navigationFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-4) var(--spacing-6);
+  border-top: 1px solid var(--border);
+  background-color: var(--muted);
+  flex-shrink: 0;
+}
+
+.navigationFooter button {
+  min-width: 200px;
+}
+
+@media (max-width: 1024px) {
+  .pageLayout {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+}
