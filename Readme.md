@@ -1,8 +1,6 @@
 # Thermodynamics Simulation Series Project
         
-id like to build a thermodynamics series of simulations that explain all the concepts on this link https://express.adobe.com/page/w4BnuP29glAyL/
 
-Made with Floot.
 
 # Instructions
 
